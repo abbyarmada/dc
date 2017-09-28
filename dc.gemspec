@@ -19,6 +19,9 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails', '~> 5.1.1'
   s.add_dependency 'pg'
 
+  # Configuration
+  s.add_dependency 'config'
+
   # Authentication
   s.add_dependency 'devise'
 
