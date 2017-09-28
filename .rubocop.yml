@@ -1,9 +1,6 @@
 # This is the default configuration file. Enabling and disabling is configured
 # in separate files. This file adds all other parameters apart from Enabled.
 
-inherit_from:
-  - enabled.yml
-  - disabled.yml
 
 # Common configuration.
 AllCops:
@@ -57,6 +54,13 @@ AllCops:
   Exclude:
     - 'node_modules/**/*'
     - 'vendor/**/*'
+    - 'test/**/*'
+    - 'app/mailers/dc/application_mailer.rb'
+    - 'app/controllers/dc/application_controller.rb'
+    - 'app/helpers/dc/application_helper.rb'
+    - 'app/models/dc/application_record.rb'
+    - 'lib/dc/engine.rb'
+    - 'lib/dc.rb'
   # Default formatter will be used if no `-f/--format` option is given.
   DefaultFormatter: progress
   # Cop names are not displayed in offense messages by default. Change behavior
@@ -935,7 +939,7 @@ Style/HashSyntax:
   PreferHashRocketsForNonAlnumEndingSymbols: false
 
 Style/IfUnlessModifier:
-  MaxLineLength: 80
+  MaxLineLength: 120
 
 Style/InverseMethods:
   Enabled: true
@@ -1257,7 +1261,7 @@ Style/TrivialAccessors:
     - to_sym
 
 Style/WhileUntilModifier:
-  MaxLineLength: 80
+  MaxLineLength: 120
 
 # `WordArray` enforces how array literals of word-like strings should be expressed.
 Style/WordArray:
@@ -1300,7 +1304,7 @@ Metrics/CyclomaticComplexity:
   Max: 6
 
 Metrics/LineLength:
-  Max: 80
+  Max: 120
   # To make it possible to copy or click on URIs in the code, we allow lines
   # containing a URI to be longer than Max.
   AllowHeredoc: true
