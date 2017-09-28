@@ -8,11 +8,10 @@ Gem::Specification.new do |s|
   s.name        = "dc"
   s.version     = Dc::VERSION
   s.authors     = ["Leonid Medovyy"]
-  s.email       = ["lmedovyy@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Dc."
-  s.description = "TODO: Description of Dc."
-  s.license     = "MIT"
+  s.email       = ["leonid.medovyy@radiant9.com"]
+  s.homepage    = 'http://www.radiant9.com/dc'
+  s.summary     = 'Framework for meta application development'
+  s.license     = 'MIT'
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
