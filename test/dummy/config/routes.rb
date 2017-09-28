@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  mount Dc::Engine => "/dc"
+  mount DC::Engine => "/dc"
 end

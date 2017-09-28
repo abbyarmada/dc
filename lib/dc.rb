@@ -1,5 +1,5 @@
 require "dc/engine"
 
-module Dc
+module DC
   # Your code goes here...
 end

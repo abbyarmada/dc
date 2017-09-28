@@ -6,7 +6,7 @@ require "dc/version"
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "dc"
-  s.version     = Dc::VERSION
+  s.version     = DC::VERSION
   s.authors     = ["Leonid Medovyy"]
   s.email       = ["leonid.medovyy@radiant9.com"]
   s.homepage    = 'http://www.radiant9.com/dc'

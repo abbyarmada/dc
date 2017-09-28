@@ -1,2 +1,2 @@
-Dc::Engine.routes.draw do
+DC::Engine.routes.draw do
 end

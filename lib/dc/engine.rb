@@ -1,5 +1,5 @@
-module Dc
+module DC
   class Engine < ::Rails::Engine
-    isolate_namespace Dc
+    isolate_namespace DC
   end
 end

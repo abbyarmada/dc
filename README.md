@@ -1,4 +1,4 @@
-# Dc
+# DC
 Short description and motivation.
 
 ## Usage
