@@ -10,5 +10,6 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
-# To use a debugger
-# gem 'byebug', group: [:development, :test]
+gem 'byebug', group: %i[development test]
+gem 'rubocop', '~> 0.50.0', require: false
+gem 'simplecov', require: false, group: [:test]
