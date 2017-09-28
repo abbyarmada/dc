@@ -30,7 +30,6 @@ require 'rspec/core/rake_task'
 desc 'Run all specs in spec directory (excluding plugin specs)'
 RSpec::Core::RakeTask.new(spec: 'app:db:test:prepare')
 
-#todo: can we kill the test lib?
 Rake::TestTask.new(:test) do |t|
   t.libs << 'lib'
   t.pattern = 'spec/**/*_spec.rb'
