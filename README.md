@@ -1,8 +1,4 @@
-# DC
-Short description and motivation.
-
-## Usage
-How to use my plugin.
+# Dragon Core
 
 ## Installation
 Add this line to your application's Gemfile:
