@@ -1,2 +1,3 @@
-blog:
-  enabled: false
+components:
+  blog:
+    enabled: false

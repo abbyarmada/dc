@@ -57,4 +57,11 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  config.before(:each, booted: true) do
+    DC.configure do |c|
+      c.boot_files = %w[dummy]
+    end
+    DC.boot
+  end
 end

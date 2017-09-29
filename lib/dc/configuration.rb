@@ -2,7 +2,7 @@ module DC
   class Configuration
     attr_accessor :boot_files
     def initialize
-      @boot_files = Proc.new { raise 'No boot file provided!' }
+      @boot_files = proc { raise 'No boot file provided!' }
     end
   end
 
