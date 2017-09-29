@@ -4,7 +4,7 @@ PATH
     dc (0.1.0)
       config
       pg
-      rails (~> 5.1.1)
+      rails (~> 5.1.4)
 
 GEM
   remote: https://rubygems.org/
