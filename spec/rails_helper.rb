@@ -6,8 +6,6 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 
-require 'devise'
-require 'friendly_id'
 require 'factory_girl_rails'
 require 'faker'
 
@@ -59,6 +57,4 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-  config.include Devise::Test::ControllerHelpers, type: :controller
-  config.include Warden::Test::Helpers, type: :controller
 end

@@ -1,11 +1,9 @@
 module DC
   class Configuration
     attr_accessor :boot_files
-    # rubocop:disable all
     def initialize
       @boot_files = Proc.new { raise 'No boot file provided!' }
     end
-    # rubocop: enable all
   end
 
   def self.configuration

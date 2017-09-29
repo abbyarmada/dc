@@ -1525,3 +1525,6 @@ Rails/Validation:
 
 Bundler/OrderedGems:
   TreatCommentsAsGroupSeparators: true
+
+Documentation:
+  Enabled: false
