@@ -31,7 +31,6 @@ RSpec::Core::RakeTask.new(spec: 'app:db:test:prepare')
 
 Rake::TestTask.new(:test) do |t|
   t.libs << 'lib'
-  t.libs << 'test'
   t.pattern = 'spec/**/*_spec.rb'
   t.verbose = false
 end
