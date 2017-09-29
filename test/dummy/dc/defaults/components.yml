@@ -1,0 +1,3 @@
+components:
+  blog:
+    enabled: false
