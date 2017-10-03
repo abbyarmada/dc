@@ -14,10 +14,20 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
 
-  config.before(:each, booted: true) do
-    DC.configure do |c|
-      c.boot_files = %w[dummy]
+  config.before(:each) do |context|
+    unless context.metadata[:boot].eql? false
+      DC.configure do |c|
+        c.boot_files = %w[dummy]
+      end
+      DC.boot
     end
-    DC.boot
+  end
+  
+  config.after(:each) do |context|
+    unless context.metadata[:boot].eql? false
+      DC.configure do |c|
+        c.boot_files = nil
+      end
+    end
   end
 end
