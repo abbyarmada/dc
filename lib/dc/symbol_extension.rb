@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Extensions for the Symbols
 class Symbol
   # returns true if the symbol is set to :on
   def on?
