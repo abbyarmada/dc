@@ -54,7 +54,7 @@ AllCops:
   Exclude:
     - 'node_modules/**/*'
     - 'vendor/**/*'
-    - 'test/**/*'
+    - 'spec/dummy/**/*'
     - 'app/mailers/dc/application_mailer.rb'
     - 'app/controllers/dc/application_controller.rb'
     - 'app/helpers/dc/application_helper.rb'
