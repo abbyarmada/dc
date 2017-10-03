@@ -1,7 +1,24 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/lmedovyy/src/dc/spec/dummy/app/helpers/application_helper.rb": [
+      "/Users/lmedovyy/src/dc/test/dummy/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/lmedovyy/src/dc/spec/factories/blogs.rb": [
+        1,
+        1,
+        2,
+        2,
+        null,
+        null
+      ],
+      "/Users/lmedovyy/src/dc/test/dummy/app/models/blog.rb": [
+        1,
+        null
+      ],
+      "/Users/lmedovyy/src/dc/test/dummy/app/models/application_record.rb": [
+        1,
         1,
         null
       ],
@@ -35,41 +52,36 @@
         null,
         null
       ],
-      "/Users/lmedovyy/src/dc/spec/dummy/spec/controllers/blog_controller_spec.rb": [
+      "/Users/lmedovyy/src/dc/spec/controllers/blog_controller_spec.rb": [
         1,
         null,
         1,
-        null,
-        null
-      ],
-      "/Users/lmedovyy/src/dc/spec/dummy/app/controllers/blog_controller.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/lmedovyy/src/dc/spec/dummy/app/controllers/application_controller.rb": [
+      "/Users/lmedovyy/src/dc/test/dummy/app/controllers/blog_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/lmedovyy/src/dc/test/dummy/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/Users/lmedovyy/src/dc/spec/dummy/spec/models/blog_spec.rb": [
+      "/Users/lmedovyy/src/dc/spec/models/blog_spec.rb": [
         1,
         null,
         1,
         1,
-        null
-      ],
-      "/Users/lmedovyy/src/dc/spec/dummy/app/models/blog.rb": [
         1,
-        null
-      ],
-      "/Users/lmedovyy/src/dc/spec/dummy/app/models/application_record.rb": [
-        1,
-        1,
+        null,
         null
       ]
     },
-    "timestamp": 1507052957
+    "timestamp": 1507054012
   }
 }

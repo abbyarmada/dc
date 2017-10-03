@@ -1,5 +1,5 @@
 ENV['RAILS_ENV'] ||= 'test'
-require File.expand_path('../../spec/dummy/config/environment.rb', __FILE__)
+require File.expand_path('../../test/dummy/config/environment.rb', __FILE__)
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 
