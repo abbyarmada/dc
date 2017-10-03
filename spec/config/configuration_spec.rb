@@ -2,7 +2,7 @@ require 'rails_helper'
 include DC
 
 describe DC::Configuration, 'configuration' do
-  it 'should not boot up without implementation file passed' do
+  it 'should not boot up without implementation file passed', boot: false do
     expect { DC.boot }.to raise_error(NoMethodError)
   end
 
@@ -20,11 +20,11 @@ describe DC::Configuration, 'configuration' do
     expect(Settings).to be_kind_of Config::Options
   end
 
-  it 'should not load default components if not booted', booted: false do
+  it 'should not load default components if not booted', boot: false do
     expect(Settings.components).to_not be_nil
   end
 
-  it 'should load default components if booted', booted: true do
+  it 'should load default components if booted' do
     expect(Settings.components).to_not be_nil
   end
 end
