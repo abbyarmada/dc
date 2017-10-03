@@ -11,6 +11,6 @@ gemspec
 # your gem to rubygems.org.
 
 gem 'byebug', group: %i[development test]
-gem 'rubocop', '~> 0.50.0', require: false
 gem 'codecov', require: false, group: [:test]
+gem 'rubocop', '~> 0.50.0', require: false
 gem 'simplecov', require: false, group: [:test]
