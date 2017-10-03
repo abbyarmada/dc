@@ -12,4 +12,5 @@ gemspec
 
 gem 'byebug', group: %i[development test]
 gem 'rubocop', '~> 0.50.0', require: false
+gem 'codecov', require: false, group: [:test]
 gem 'simplecov', require: false, group: [:test]
