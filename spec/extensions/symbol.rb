@@ -2,7 +2,6 @@ require 'rails_helper'
 include DC
 
 describe Symbol, 'on symbol extension' do
-
   it 'should be true if the value is on' do
     symbol = :on
     expect(symbol.on?).to be(true)
@@ -12,11 +11,9 @@ describe Symbol, 'on symbol extension' do
     symbol = :off
     expect(symbol.on?).to be(false)
   end
-
 end
 
 describe Symbol, 'off symbol extension' do
-
   it 'should be true if the value is off' do
     symbol = :off
     expect(symbol.off?).to be(true)
@@ -26,5 +23,4 @@ describe Symbol, 'off symbol extension' do
     symbol = :on
     expect(symbol.off?).to be(false)
   end
-
 end
