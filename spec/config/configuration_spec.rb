@@ -24,7 +24,7 @@ describe DC::Configuration, 'configuration' do
     expect(Settings.components).to_not be_nil
   end
 
-  it 'should load default components if booted'  do
+  it 'should load default components if booted' do
     expect(Settings.components).to_not be_nil
   end
 end
