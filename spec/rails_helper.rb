@@ -22,7 +22,6 @@ RSpec.configure do |config|
       DC.boot
     end
   end
-  
   config.after(:each) do |context|
     unless context.metadata[:boot].eql? false
       DC.configure do |c|
