@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root to: 'blog#index', component: 'blog'
 
   resources :blog, controller: 'blog', component: 'blog'
-  resources :blogs, controller: 'blog', component: 'blog'
+  resources :links, controller: 'links', component: 'link'
 end
