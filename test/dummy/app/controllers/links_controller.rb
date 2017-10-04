@@ -1,6 +1,6 @@
 class LinksController < DC::MetaController
   def index
     @entry = Link.last
-    render 'blog/index'
+    render 'meta/index'
   end
 end

@@ -1,2 +1,9 @@
-blog:
-  enabled: true
+components:
+  blog:
+    name: 'Blog Module'
+    enabled: true
+    path: 'blog'
+  link:
+    name: 'Link Module'
+    enabled: true
+    path: 'links'

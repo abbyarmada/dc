@@ -7,7 +7,7 @@ require 'slim-rails'
 require 'config'
 
 # extensions
-require 'dc/symbol_extension'
+require 'extensions/symbol_extension'
 
 require 'dc/engine'
 require 'dc/configuration'
