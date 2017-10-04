@@ -22,21 +22,27 @@ module DC
 
     # calls the delete
     def meta_delete_path(entry, component = params[:component])
-      send(edit_path(component), entry)
+      send(delete_path(component), entry)
     end
+
+    # Todo: consider making _path methods private in favor of relying on the meta helpers
 
     def index_path(component)
       "#{component}_index_path"
     end
+
     def new_path(component)
       "new_#{component}_path"
     end
+
     def show_path(component)
       "#{component}_path"
     end
+
     def edit_path(component)
       "edit_#{component}_path"
     end
+
     def delete_path(component)
       "#{component}_path"
     end

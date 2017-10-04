@@ -34,3 +34,35 @@ describe DC::PathHelper, 'path helper' do
   end
 
 end
+
+describe DC::PathHelper, 'meta path helper' do
+  before(:each) do
+    params[:component] = 'blog'
+    @entry = FactoryGirl.create(:blog)
+  end
+  after(:each) do
+    params[:component] = nil
+    @entry = nil
+  end
+
+  it 'calls the index path' do
+    expect(helper.meta_index_path).to eq ('/blog')
+  end
+
+  it 'calls the new path' do
+    expect(helper.meta_new_path).to eq ('/blog/new')
+  end
+
+  it 'calls the show path' do
+    expect(helper.meta_show_path(@entry)).to eq ("/blog/#{@entry.id}")
+  end
+
+  it 'calls the edit path' do
+    expect(helper.meta_edit_path(@entry)).to eq ("/blog/#{@entry.id}/edit")
+  end
+
+  it 'calls the delete path' do
+    expect(helper.meta_delete_path(@entry)).to eq ("/blog/#{@entry.id}")
+  end
+
+end
