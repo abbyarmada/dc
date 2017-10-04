@@ -1,9 +1,9 @@
 components:
   blog:
-    name: 'Blog Module'
+    name: 'Blog'
     enabled: true
     path: 'blog'
   link:
-    name: 'Link Module'
+    name: 'Link'
     enabled: true
     path: 'links'
