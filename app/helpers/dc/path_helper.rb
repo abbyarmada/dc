@@ -1,4 +1,5 @@
 module DC
+  # Responsible for generating 'meta' paths from the component & entry
   module PathHelper
     # calls the index path
     def meta_index_path(component = params[:component])
