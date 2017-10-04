@@ -25,25 +25,25 @@ module DC
       send(delete_path(component), entry)
     end
 
-    # Todo: consider making _path methods private in favor of relying on the meta helpers
+    # TODO: Consider making _path methods private in favor of relying on the meta helpers
 
-    def index_path(component)
+    def index_path(component = params[:component])
       "#{component}_index_path"
     end
 
-    def new_path(component)
+    def new_path(component = params[:component])
       "new_#{component}_path"
     end
 
-    def show_path(component)
+    def show_path(component = params[:component])
       "#{component}_path"
     end
 
-    def edit_path(component)
+    def edit_path(component = params[:component])
       "edit_#{component}_path"
     end
 
-    def delete_path(component)
+    def delete_path(component = params[:component])
       "#{component}_path"
     end
   end

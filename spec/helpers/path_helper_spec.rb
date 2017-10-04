@@ -18,21 +18,20 @@ describe DC::PathHelper, 'path helper' do
   end
 
   it 'returns new path' do
-    expect(helper.new_path(@component)).to eq('new_blog_path')
+    expect(helper.new_path(@component)).to eq 'new_blog_path'
   end
 
   it 'returns show path' do
-    expect(helper.show_path(@component)).to eq('blog_path')
+    expect(helper.show_path(@component)).to eq 'blog_path'
   end
 
   it 'returns edit path' do
-    expect(helper.edit_path(@component)).to eq('edit_blog_path')
+    expect(helper.edit_path(@component)).to eq 'edit_blog_path'
   end
 
   it 'returns delete path' do
-    expect(helper.delete_path(@component)).to eq('blog_path')
+    expect(helper.delete_path(@component)).to eq 'blog_path'
   end
-
 end
 
 describe DC::PathHelper, 'meta path helper' do
@@ -46,23 +45,22 @@ describe DC::PathHelper, 'meta path helper' do
   end
 
   it 'calls the index path' do
-    expect(helper.meta_index_path).to eq ('/blog')
+    expect(helper.meta_index_path).to eq '/blog'
   end
 
   it 'calls the new path' do
-    expect(helper.meta_new_path).to eq ('/blog/new')
+    expect(helper.meta_new_path).to eq '/blog/new'
   end
 
   it 'calls the show path' do
-    expect(helper.meta_show_path(@entry)).to eq ("/blog/#{@entry.id}")
+    expect(helper.meta_show_path(@entry)).to eq "/blog/#{@entry.id}"
   end
 
   it 'calls the edit path' do
-    expect(helper.meta_edit_path(@entry)).to eq ("/blog/#{@entry.id}/edit")
+    expect(helper.meta_edit_path(@entry)).to eq "/blog/#{@entry.id}/edit"
   end
 
   it 'calls the delete path' do
-    expect(helper.meta_delete_path(@entry)).to eq ("/blog/#{@entry.id}")
+    expect(helper.meta_delete_path(@entry)).to eq "/blog/#{@entry.id}"
   end
-
 end
