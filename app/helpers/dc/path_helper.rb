@@ -27,10 +27,8 @@ module DC
       send(delete_path(component), entry)
     end
 
-    # TODO: Consider making _path methods private in favor of relying on the meta helpers
-
     def index_path(component = params[:component])
-      path = settings "components.#{component}.path", fatal_exception: true
+      path = path_getter(component)
       if path.pluralize(nil) == path
         "#{path}_path"
       else
@@ -39,23 +37,24 @@ module DC
     end
 
     def new_path(component = params[:component])
-      path = settings "components.#{component}.path", fatal_exception: true
-      "new_#{path.singularize}_path"
+      "new_#{path_getter(component).singularize}_path"
     end
 
     def show_path(component = params[:component])
-      path = settings "components.#{component}.path", fatal_exception: true
-      "#{path.singularize}_path"
+      "#{path_getter(component).singularize}_path"
     end
 
     def edit_path(component = params[:component])
-      path = settings "components.#{component}.path", fatal_exception: true
-      "edit_#{path.singularize}_path"
+      "edit_#{path_getter(component).singularize}_path"
     end
 
     def delete_path(component = params[:component])
-      path = settings "components.#{component}.path", fatal_exception: true
-      "#{path.singularize}_path"
+      "#{path_getter(component).singularize}_path"
+    end
+
+    private
+    def path_getter(component)
+      settings "components.#{component}.path", fatal_exception: true
     end
   end
 end
