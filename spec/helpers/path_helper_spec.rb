@@ -76,27 +76,22 @@ describe DC::PathHelper, 'meta plular path helper' do
   end
 
   it 'calls the index path' do
-    pending
     expect(helper.meta_index_path).to eq '/links'
   end
 
   it 'calls the new path' do
-    pending
     expect(helper.meta_new_path).to eq '/links/new'
   end
 
   it 'calls the show path' do
-    pending
     expect(helper.meta_show_path(@entry)).to eq "/links/#{@entry.id}"
   end
 
   it 'calls the edit path' do
-    pending
     expect(helper.meta_edit_path(@entry)).to eq "/links/#{@entry.id}/edit"
   end
 
   it 'calls the delete path' do
-    pending
     expect(helper.meta_delete_path(@entry)).to eq "/links/#{@entry.id}"
   end
 end

@@ -27,7 +27,6 @@ table
       th.superhead Path Name
       th.superhead DC Path
       th.superhead Meta Path
-      th.superhead System Path
   tbody
     tr
       th Index Path
@@ -35,37 +34,27 @@ table
         = index_path(params[:component])
       td
         = meta_index_path
-      td
-        = blog_index_path
     tr
       th New Path
       td
         = new_path(params[:component])
       td
         = meta_new_path
-      td
-        = new_blog_path
     tr
       th Show Path
       td
         = show_path(params[:component])
       td
         = meta_show_path(@entry)
-      td
-        = blog_path(@entry)
     tr
       th Edit Path
       td
         = edit_path(params[:component])
       td
         = meta_edit_path(@entry)
-      td
-        = edit_blog_path(@entry)
     tr
       th Delete Path
       td
         = delete_path(params[:component])
       td
         = meta_delete_path(@entry)
-      td
-        = blog_path(@entry)

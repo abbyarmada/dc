@@ -3,7 +3,7 @@ components:
     name: 'Blog'
     enabled: true
     path: 'blog'
-  link:
-    name: 'Link'
+  links:
+    name: 'Links'
     enabled: true
     path: 'links'

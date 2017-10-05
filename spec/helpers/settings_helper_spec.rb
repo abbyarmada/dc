@@ -23,17 +23,14 @@ describe DC::SettingsHelper, 'settings helper' do
   end
 
   it 'throws a fatal exception if the first item in path is non existent' do
-    expect{ settings('undefined.blog.name', fatal_exception: true) }.to raise_exception(RuntimeError)
+    expect { settings('undefined.blog.name', fatal_exception: true) }.to raise_exception(RuntimeError)
   end
 
   it 'throws a fatal exception if the middle item in path is non existent' do
-    expect{ settings('components.undefined.name', fatal_exception: true) }.to raise_exception(RuntimeError)
+    expect { settings('components.undefined.name', fatal_exception: true) }.to raise_exception(RuntimeError)
   end
 
   it 'throws a fatal exception if the last item in path is non existent' do
-    expect{ settings('components.blog.undefined', fatal_exception: true) }.to raise_exception(RuntimeError)
+    expect { settings('components.blog.undefined', fatal_exception: true) }.to raise_exception(RuntimeError)
   end
-
-
 end
-

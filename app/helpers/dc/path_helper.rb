@@ -1,4 +1,5 @@
 module DC
+  include SettingsHelper
   # Responsible for generating 'meta' paths from the component & entry
   module PathHelper
     # calls the index path
@@ -29,23 +30,32 @@ module DC
     # TODO: Consider making _path methods private in favor of relying on the meta helpers
 
     def index_path(component = params[:component])
-      "#{component}_index_path"
+      path = settings "components.#{component}.path", fatal_exception: true
+      if path.pluralize(nil) == path
+        "#{path}_path"
+      else
+        "#{path}_index_path"
+      end
     end
 
     def new_path(component = params[:component])
-      "new_#{component}_path"
+      path = settings "components.#{component}.path", fatal_exception: true
+      "new_#{path.singularize}_path"
     end
 
     def show_path(component = params[:component])
-      "#{component}_path"
+      path = settings "components.#{component}.path", fatal_exception:true
+      "#{path.singularize}_path"
     end
 
     def edit_path(component = params[:component])
-      "edit_#{component}_path"
+      path = settings "components.#{component}.path", fatal_exception:true
+      "edit_#{path.singularize}_path"
     end
 
     def delete_path(component = params[:component])
-      "#{component}_path"
+      path = settings "components.#{component}.path", fatal_exception:true
+      "#{path.singularize}_path"
     end
   end
 end
