@@ -44,17 +44,17 @@ module DC
     end
 
     def show_path(component = params[:component])
-      path = settings "components.#{component}.path", fatal_exception:true
+      path = settings "components.#{component}.path", fatal_exception: true
       "#{path.singularize}_path"
     end
 
     def edit_path(component = params[:component])
-      path = settings "components.#{component}.path", fatal_exception:true
+      path = settings "components.#{component}.path", fatal_exception: true
       "edit_#{path.singularize}_path"
     end
 
     def delete_path(component = params[:component])
-      path = settings "components.#{component}.path", fatal_exception:true
+      path = settings "components.#{component}.path", fatal_exception: true
       "#{path.singularize}_path"
     end
   end

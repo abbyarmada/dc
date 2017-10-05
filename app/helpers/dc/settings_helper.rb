@@ -6,11 +6,8 @@ module DC
       path_array = path.split('.')
       value = nil
       path_array.each_with_index do |fragment, index|
-        if index.eql? 0
-          value = Settings[fragment]
-        else
-          value = value[fragment]
-        end
+        value = Settings[fragment] if index.eql? 0
+        value = value[fragment] unless index.eql? 0
         raise "fragment `#{fragment}` does not exist within `#{path}`" if value.nil? && options[:fatal_exception]
         return nil if value.nil?
       end
