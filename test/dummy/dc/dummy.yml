@@ -1,9 +1,19 @@
+# component structure
+# component:
+#   name_of_component:
+#     enabled: true/false # sets whether the component is enabled
+#     path: 'string' # sets the routes path
+#     klass: 'string' # class name of the component
+#     name: 'string' # name of the component. Displayed on the front end.
+
 components:
   blog:
-    name: 'Blog'
     enabled: true
     path: 'blog'
+    klass: 'Blog'
+    name: 'Blog'
   links:
-    name: 'Links'
     enabled: true
     path: 'links'
+    klass: 'Link'
+    name: 'Links'

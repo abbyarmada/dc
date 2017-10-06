@@ -34,3 +34,19 @@ describe DC::SettingsHelper, 'settings helper' do
     expect { settings('components.blog.undefined', fatal_exception: true) }.to raise_exception(RuntimeError)
   end
 end
+
+describe DC::SettingsHelper, 'nodes' do
+  it 'returns the proper node name' do
+    components = settings('components', fatal_exception: true)
+    components.each do |component|
+      expect(node_name(component)).to eq component[0].to_s
+    end
+  end
+
+  it 'returns the proper node value' do
+    components = settings('components', fatal_exception: true)
+    components.each do |component|
+      expect(node_value(component)).to eq component[1]
+    end
+  end
+end
