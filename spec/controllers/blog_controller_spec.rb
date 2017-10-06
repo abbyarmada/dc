@@ -6,4 +6,8 @@ describe BlogController, type: :controller do
   it 'should be an implementation of metacontroller' do
     expect(BlogController).to be < DC::MetaController
   end
+
+  it 'should show index' do
+    get :index
+  end
 end
