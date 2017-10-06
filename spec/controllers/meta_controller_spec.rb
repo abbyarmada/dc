@@ -22,13 +22,13 @@ end
         expect(entry_class).to be component_class
       end
 
-      it 'It loads the entries' do
+      it 'The length of entries is not null' do
         FactoryGirl.create_list(@comp_class.downcase.to_sym, 20)
         entries = controller.instance_variable_get(:@entires)
         expect(entries.length).to_not be_nil
       end
 
-      it 'response is 200' do
+      it 'The response is 200' do
         expect(response.status).to be 200
       end
 
