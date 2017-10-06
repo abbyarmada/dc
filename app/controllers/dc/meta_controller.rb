@@ -2,7 +2,7 @@ module DC
   class MetaController < ApplicationController
     include SettingsHelper
     before_action :entry_class
-    before_action :load_entry, only: %i(show edit update destroy)
+    before_action :load_entry, only: %i[show edit update destroy]
 
     def index
       @entires = entry_class.all.order('name')
