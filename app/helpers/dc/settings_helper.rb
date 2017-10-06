@@ -1,6 +1,8 @@
 module DC
   # Responsible for helping with the settings object
   module SettingsHelper
+
+    # traverses the path and returns a setting
     def settings(path, options = {})
       # split the path into an array
       path_array = path.split('.')
@@ -12,6 +14,16 @@ module DC
         return nil if value.nil?
       end
       value
+    end
+
+    # returns the name of the node
+    def node_name(node)
+      node[0]
+    end
+
+    # returns the value of the node
+    def node_value(node)
+      node[1]
     end
   end
 end

@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe DC::MetaController, type: :controller do
+  include DC::SettingsHelper
   include DC::PathHelper
 
   before(:example) do
