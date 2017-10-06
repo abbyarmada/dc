@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/BlockLength
 require 'rails_helper'
 include SettingsHelper
 
@@ -35,4 +36,30 @@ end
       end
     end
   end
+
+  describe @controller_class, type: :controller do
+    describe 'new actions' do
+      before(:each) do
+        get :new, params: { component: component[0].to_s }
+        @comp_class = node_value(component).klass
+      end
+
+      it 'The entry class is properly set.' do
+        component_class = @comp_class.constantize
+        entry_class = controller.instance_variable_get(:@entry_class)
+        expect(entry_class).to be component_class
+      end
+
+      it 'creates the correct new class entry' do
+        component_class = @comp_class.constantize
+        entry_class = controller.instance_variable_get(:@entry)
+        expect(entry_class).to be_a_new(component_class)
+      end
+
+      it 'The response is 200' do
+        expect(response.status).to be 200
+      end
+    end
+  end
 end
+# rubocop:enable Metrics/BlockLength
