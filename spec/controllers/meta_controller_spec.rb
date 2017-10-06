@@ -1,4 +1,5 @@
 require 'rails_helper'
+include SettingsHelper
 
 @components = []
 
@@ -8,11 +9,13 @@ Settings.components.each do |component|
 end
 
 @components.each do |component|
-  describe "#{component[0].to_s.titleize}Controller".classify.constantize, type: :controller do
+  @controller_class = "#{node_name(component)}Controller".classify.constantize
+
+  describe @controller_class, type: :controller do
     describe 'index actions' do
       before(:each) do
         get :index, params: { component: component[0].to_s }
-        @comp_class = component[1].klass
+        @comp_class = node_value(component).klass
       end
 
       it 'The entry class is properly set.' do
