@@ -61,5 +61,26 @@ end
       end
     end
   end
+
+  describe @controller_class, type: :controller do
+    describe 'edit actions' do
+      before(:each) do
+        @comp_class = node_value(component).klass
+        FactoryGirl.create_list(@comp_class.downcase.to_sym, 20)
+        last_object = @comp_class.constantize.last
+        get :edit, params: { component: component[0].to_s, id: last_object.id}
+      end
+
+      it 'The entry class is properly set.' do
+        component_class = @comp_class.constantize
+        entry_class = controller.instance_variable_get(:@entry_class)
+        expect(entry_class).to be component_class
+      end
+
+      it 'The response is 200' do
+        expect(response.status).to be 200
+      end
+    end
+  end
 end
 # rubocop:enable Metrics/BlockLength
