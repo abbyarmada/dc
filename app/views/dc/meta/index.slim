@@ -16,9 +16,16 @@ sass:
 h1 DC Tester
 hr
 
-h2= "Component: `#{params[:component]}`"
-code= @entry.inspect
+h2= "Component Param: `#{params[:component]}`"
 hr
+
+h2 Entry Class
+code= @entry_class
+
+hr
+
+h2 Entries
+code= @entires.inspect
 
 h2 Paths:
 table
@@ -40,21 +47,3 @@ table
         = new_path(params[:component])
       td
         = meta_new_path
-    tr
-      th Show Path
-      td
-        = show_path(params[:component])
-      td
-        = meta_show_path(@entry)
-    tr
-      th Edit Path
-      td
-        = edit_path(params[:component])
-      td
-        = meta_edit_path(@entry)
-    tr
-      th Delete Path
-      td
-        = delete_path(params[:component])
-      td
-        = meta_delete_path(@entry)
