@@ -1,7 +1,6 @@
 module DC
   # Responsible for helping with the settings object
   module SettingsHelper
-
     # traverses the path and returns a setting
     def settings(path, options = {})
       # split the path into an array

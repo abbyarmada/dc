@@ -9,10 +9,9 @@ end
 
 @components.each do |component|
   describe "#{component[0].to_s.titleize}Controller".classify.constantize, type: :controller do
-
     describe 'index actions' do
       before(:each) do
-        get :index, params: {component: component[0].to_s}
+        get :index, params: { component: component[0].to_s }
         @comp_class = component[1].klass
       end
 
@@ -31,8 +30,6 @@ end
       it 'The response is 200' do
         expect(response.status).to be 200
       end
-
     end
-
   end
 end

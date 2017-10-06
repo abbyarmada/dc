@@ -36,7 +36,6 @@ describe DC::SettingsHelper, 'settings helper' do
 end
 
 describe DC::SettingsHelper, 'nodes' do
-
   it 'returns the proper node name' do
     components = settings('components', fatal_exception: true)
     components.each do |component|
@@ -50,6 +49,4 @@ describe DC::SettingsHelper, 'nodes' do
       expect(node_value(component)).to eq component[1]
     end
   end
-
-
 end
