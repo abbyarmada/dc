@@ -7,14 +7,6 @@ module DC
       @entires = entry_class.all.order('name')
     end
 
-    def show
-
-    end
-
-    def delete
-
-    end
-
     private
 
     def entry_class

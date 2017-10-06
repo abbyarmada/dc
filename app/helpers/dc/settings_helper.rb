@@ -18,7 +18,7 @@ module DC
 
     # returns the name of the node
     def node_name(node)
-      node[0]
+      node[0].to_s
     end
 
     # returns the value of the node

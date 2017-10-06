@@ -40,7 +40,7 @@ describe DC::SettingsHelper, 'nodes' do
   it 'returns the proper node name' do
     components = settings('components', fatal_exception: true)
     components.each do |component|
-      expect(node_name(component)).to eq component[0]
+      expect(node_name(component)).to eq component[0].to_s
     end
   end
 

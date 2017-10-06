@@ -9,12 +9,30 @@ end
 
 @components.each do |component|
   describe "#{component[0].to_s.titleize}Controller".classify.constantize, type: :controller do
-    include DC::SettingsHelper
-    include DC::PathHelper
 
-      it "can render the index path for: #{component[0]}" do
-        get 'blogs', params: { component: component[0] }
+    describe 'index actions' do
+      before(:each) do
+        get :index, params: {component: component[0].to_s}
+        @comp_class = component[1].klass
       end
+
+      it 'The entry class is properly set.' do
+        component_class = @comp_class.constantize
+        entry_class = controller.instance_variable_get(:@entry_class)
+        expect(entry_class).to be component_class
+      end
+
+      it 'It loads the entries' do
+        FactoryGirl.create_list(@comp_class.downcase.to_sym, 20)
+        entries = controller.instance_variable_get(:@entires)
+        expect(entries.length).to_not be_nil
+      end
+
+      it 'response is 200' do
+        expect(response.status).to be 200
+      end
+
+    end
 
   end
 end

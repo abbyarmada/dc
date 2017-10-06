@@ -8,6 +8,6 @@ describe BlogController, type: :controller do
   end
 
   it 'should show index' do
-    get :index
+    get :index, params: {component: 'blog'}
   end
 end
