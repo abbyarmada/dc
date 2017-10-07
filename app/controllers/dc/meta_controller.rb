@@ -1,6 +1,6 @@
 module DC
   class MetaController < ApplicationController
-    include SettingsHelper
+    include ApplicationHelper
     before_action :entry_class
     before_action :component_name, only: %i[create update destroy]
     before_action :load_entry, only: %i[show edit update destroy]

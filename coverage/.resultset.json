@@ -22,16 +22,19 @@
         1,
         null
       ],
-      "/Users/lmedovyy/src/dc/test/dummy/app/models/application_record.rb": [
-        1,
-        1,
-        null
-      ],
       "/Users/lmedovyy/src/dc/spec/factories/links.rb": [
         1,
         1,
         367,
         367,
+        null,
+        null
+      ],
+      "/Users/lmedovyy/src/dc/spec/factories/users.rb": [
+        1,
+        1,
+        2,
+        2,
         null,
         null
       ],
@@ -151,6 +154,38 @@
       "/Users/lmedovyy/src/dc/app/helpers/dc/application_helper.rb": [
         1,
         1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/lmedovyy/src/dc/app/helpers/dc/settings_helper.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        183,
+        183,
+        183,
+        537,
+        537,
+        537,
+        534,
+        null,
+        177,
+        null,
+        null,
+        null,
+        1,
+        98,
+        null,
+        null,
+        null,
+        1,
+        60,
+        null,
         null,
         null
       ],
@@ -210,36 +245,6 @@
         null,
         1,
         33,
-        null,
-        null,
-        null
-      ],
-      "/Users/lmedovyy/src/dc/app/helpers/dc/settings_helper.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        183,
-        183,
-        183,
-        537,
-        537,
-        537,
-        534,
-        null,
-        177,
-        null,
-        null,
-        null,
-        1,
-        98,
-        null,
-        null,
-        null,
-        1,
-        60,
         null,
         null,
         null
@@ -520,7 +525,6 @@
         10,
         null,
         null,
-        null,
         2,
         2,
         2,
@@ -729,8 +733,19 @@
         1,
         1,
         null
+      ],
+      "/Users/lmedovyy/src/dc/spec/models/user_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
       ]
     },
-    "timestamp": 1507410662
+    "timestamp": 1507415045
   }
 }
