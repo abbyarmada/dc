@@ -17,3 +17,24 @@ components:
     path: 'links'
     klass: 'Link'
     name: 'Links'
+
+# view struture
+# component:
+#   view type: # choose from [index, new, show]
+#     field_name: # name of the actual field
+#       type: # choose from [:string, :text]
+
+views:
+  blog:
+    new:
+      name:
+        type: 'string'
+      description:
+        type: 'text'
+  links:
+    new:
+      name:
+        type: 'string'
+      url:
+        type: 'string'
+
