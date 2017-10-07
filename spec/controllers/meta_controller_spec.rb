@@ -15,8 +15,9 @@ end
   describe @controller_class, type: :controller do
     describe 'index actions' do
       before(:each) do
-        get :index, params: { component: component[0].to_s }
         @comp_class = node_value(component).klass
+        @comp_name = node_name(component)
+        get :index, params: { component: @comp_name }
       end
 
       it 'The entry class is properly set.' do
@@ -29,6 +30,33 @@ end
         FactoryGirl.create_list(@comp_class.downcase.to_sym, 20)
         entries = controller.instance_variable_get(:@entires)
         expect(entries.length).to_not be_nil
+      end
+
+      it 'The response is 200' do
+        expect(response.status).to be 200
+      end
+    end
+  end
+
+  describe @controller_class, type: :controller do
+    describe 'show actions' do
+      before(:each) do
+        @comp_class = node_value(component).klass
+        @comp_name = node_name(component)
+        FactoryGirl.create_list(@comp_class.downcase.to_sym, 20)
+        @last_entry = @comp_class.constantize.last
+        get :show, params: { component: @comp_name, id: @last_entry.id }
+      end
+
+      it 'The entry class is properly set.' do
+        component_class = @comp_class.constantize
+        entry_class = controller.instance_variable_get(:@entry_class)
+        expect(entry_class).to be component_class
+      end
+
+      it 'loads a correct entry' do
+        entry = controller.instance_variable_get(:@entry)
+        expect(entry).to eq(@last_entry)
       end
 
       it 'The response is 200' do
@@ -125,6 +153,7 @@ end
       end
     end
   end
+
   describe @controller_class, type: :controller do
     describe 'in-valid update actions' do
       before(:each) do
@@ -188,6 +217,7 @@ end
       end
     end
   end
+
   describe @controller_class, type: :controller do
     describe 'in-valid update actions' do
       before(:each) do

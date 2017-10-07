@@ -9,6 +9,8 @@ module DC
       @entires = entry_class.all.order('name')
     end
 
+    def show() end
+
     def new
       @entry = entry_class.new
       render :new, layout: false
