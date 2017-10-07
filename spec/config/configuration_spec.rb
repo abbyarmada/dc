@@ -10,14 +10,8 @@ describe DC::Configuration, 'configuration' do
     expected = expect do
       DC.configure do |config|
         config.boot_files = %w[dummy]
-
-        config.current_user_lookup do
-          nil
-        end
-
-        config.sign_in_url do
-          'http://wwww.google.com'
-        end
+        config.current_user_lookup { nil }
+        config.sign_in_url { 'http://wwww.google.com' }
       end
       DC.boot
     end

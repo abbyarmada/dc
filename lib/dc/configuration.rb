@@ -17,7 +17,6 @@ module DC
       @sign_in_url = block if block
       @sign_in_url
     end
-
   end
 
   def self.configuration
@@ -42,12 +41,11 @@ module DC
     Settings.reload!
   end
 
-  private
-
   def self.check_config
     raise 'No configuration file provided' if configuration.boot_files.nil?
     raise 'No user lookup provided' if configuration.current_user_lookup.nil?
     raise 'No sign in url provided!' if configuration.sign_in_url.nil?
   end
 
+  private_class_method :check_config
 end
