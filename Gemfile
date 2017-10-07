@@ -12,6 +12,8 @@ gemspec
 
 gem 'byebug', group: %i[development test]
 gem 'codecov', require: false, group: [:test]
+gem 'devise'
+gem 'jquery-rails'
 gem 'rubocop', '~> 0.50.0', require: false
 gem 'sass-rails'
 gem 'simplecov', require: false, group: [:test]
