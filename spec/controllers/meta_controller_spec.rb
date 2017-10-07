@@ -152,7 +152,6 @@ end
     end
   end
 
-
   describe @controller_class, type: :controller do
     describe 'valid create actions' do
       before(:each) do
@@ -160,11 +159,11 @@ end
         @comp_class = node_value(component).klass
 
         params = {
-            component: @comp_name,
-            @comp_name.singularize => { name: Faker::Name.name }
+          component: @comp_name,
+          @comp_name.singularize => { name: Faker::Name.name }
         }
 
-        patch :create , params: params
+        patch :create, params: params
 
         @last_entry = @comp_class.constantize.last
       end
@@ -196,8 +195,8 @@ end
         @comp_class = node_value(component).klass
 
         params = {
-            component: @comp_name,
-            @comp_name.singularize => { name: nil }
+          component: @comp_name,
+          @comp_name.singularize => { name: nil }
         }
 
         patch :create, params: params
@@ -214,6 +213,5 @@ end
       end
     end
   end
-
 end
 # rubocop:enable Metrics/BlockLength
