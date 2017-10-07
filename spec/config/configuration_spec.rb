@@ -2,14 +2,22 @@ require 'rails_helper'
 include DC
 
 describe DC::Configuration, 'configuration' do
-  it 'should not boot up without implementation file passed', boot: false do
-    expect { DC.boot }.to raise_error(NoMethodError)
+  it 'should not boot up without config being set', boot: false do
+    expect { DC.boot }.to raise_error(RuntimeError)
   end
 
-  it 'should boot with implementation file passed', boot: false do
+  it 'should boot with configuration set', boot: false do
     expected = expect do
       DC.configure do |config|
         config.boot_files = %w[dummy]
+
+        config.current_user_lookup do
+          nil
+        end
+
+        config.sign_in_url do
+          'http://wwww.google.com'
+        end
       end
       DC.boot
     end
