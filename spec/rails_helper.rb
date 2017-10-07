@@ -18,6 +18,14 @@ RSpec.configure do |config|
     unless context.metadata[:boot].eql? false
       DC.configure do |c|
         c.boot_files = %w[dummy]
+
+        c.current_user_lookup do
+          nil
+        end
+
+        c.sign_in_url do
+          'http://wwww.google.com'
+        end
       end
       DC.boot
     end
