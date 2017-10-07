@@ -17,6 +17,20 @@ module DC
       render :edit, layout: false
     end
 
+    def create
+      @entry = entry_class.new(entry_params)
+      if @entry.save
+        component_name = settings("components.#{params[:component]}.name")
+        response.headers['status'] = 'success'
+        flash[:success] = "#{component_name} was successfully created."
+
+        redirect_to helpers.meta_show_path(@entry)
+      else
+        response.headers['status'] = 'error'
+        render :new, layout: false
+      end
+    end
+
     def update
       if @entry.update(entry_params)
         component_name = settings("components.#{params[:component]}.name")
