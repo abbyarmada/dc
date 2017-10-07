@@ -2,7 +2,7 @@ module DC
   class MetaController < ApplicationController
     include SettingsHelper
     before_action :entry_class
-    before_action :component_name, only: %i[create update]
+    before_action :component_name, only: %i[create update destroy]
     before_action :load_entry, only: %i[show edit update destroy]
 
     def index
@@ -40,6 +40,13 @@ module DC
         response_status :error
         render :edit, layout: false
       end
+    end
+
+    def destroy
+      @entry.destroy
+      flash[:success] = "#{component_name} was successfully updated."
+      response_status :success
+      redirect_to helpers.meta_index_path
     end
 
     private

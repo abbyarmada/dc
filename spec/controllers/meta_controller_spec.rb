@@ -243,5 +243,46 @@ end
       end
     end
   end
+
+  describe @controller_class, type: :controller do
+    describe 'destroy actions' do
+      before(:each) do
+        @comp_name = node_name(component)
+        @comp_class = node_value(component).klass
+        FactoryGirl.create_list(@comp_class.downcase.to_sym, 20)
+        @last_entry = @comp_class.constantize.last
+
+        params = {
+          component: @comp_name,
+          id: @last_entry.id
+        }
+
+        patch :destroy, params: params
+      end
+
+      it 'The entry class is properly set.' do
+        component_class = @comp_class.constantize
+        entry_class = controller.instance_variable_get(:@entry_class)
+        expect(entry_class).to be component_class
+      end
+
+      it 'loads a correct entry' do
+        entry = controller.instance_variable_get(:@entry)
+        expect(entry).to eq(@last_entry)
+      end
+
+      it 'destroys an entry' do
+        expect(@comp_class.constantize.find_by_id(@last_entry.id)).to be_nil
+      end
+
+      it 'The response is 302' do
+        expect(response.status).to be 302
+      end
+
+      it 'Receives an error header' do
+        expect(response.headers['status']).to eq 'success'
+      end
+    end
+  end
 end
 # rubocop:enable Metrics/BlockLength
