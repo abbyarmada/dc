@@ -12,6 +12,6 @@ class User < ApplicationRecord
 
   def assign_default_role
     default_role = settings('defaults.permissions.new_user.role', fatal_exception: true).to_sym
-    self.add_role(default_role) if roles.blank?
+    add_role(default_role) if roles.blank?
   end
 end
