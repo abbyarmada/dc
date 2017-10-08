@@ -1,11 +1,13 @@
 class User < ApplicationRecord
-  include DC::SettingsHelper
 
   rolify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  # TODO: Move into its own concern
+  include DC::SettingsHelper
 
   after_create :assign_default_role
 

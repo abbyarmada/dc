@@ -14,4 +14,16 @@ describe User, type: :model do
     default_role = settings('defaults.permissions.new_user.role', fatal_exception: true).to_sym
     expect(last_user.has_role?(default_role)).to eq true
   end
+
+  it 'should not be able to set a non existing role' do
+    FactoryGirl.create(:user)
+    last_user = User.last
+    expect { last_user.add_role(:nonrole) }.to raise_error(RuntimeError)
+  end
+
+  it 'should not be able to set an existing role' do
+    FactoryGirl.create(:user)
+    last_user = User.last
+    expect { last_user.add_role(:editor) }.not_to raise_error
+  end
 end

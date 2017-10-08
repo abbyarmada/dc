@@ -1,4 +1,5 @@
 class Role < ApplicationRecord
+
   has_and_belongs_to_many :users, :join_table => :users_roles
 
   belongs_to :resource,
@@ -10,4 +11,15 @@ class Role < ApplicationRecord
             :allow_nil => true
 
   scopify
+
+  # TODO: Move into its own concern
+  include DC::SettingsHelper
+
+  before_create :verify_role_exists
+  before_update :verify_role_exists
+
+  def verify_role_exists
+    roles = settings "auth.roles", fatal_exception: true
+    raise "Role: `#{self.name}` is not defined under auth.roles" unless roles.include?(self.name)
+  end
 end
