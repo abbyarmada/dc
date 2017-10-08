@@ -1,22 +1,37 @@
+# implementation defaults
+
+defaults:
+
+  # permission defaults
+  # visitor:    # unregistered visitor
+  # new_user:   #properties assigned to the new user
+  #   role:     # default role assigned for the new user
+
+  permissions:
+    visitor:
+      role: guest
+    new_user:
+      role: member
+
 # component structure
 # component:
 #   name_of_component:
-#     enabled: true/false # sets whether the component is enabled
-#     path: 'string' # sets the routes path
-#     klass: 'string' # class name of the component
 #     name: 'string' # name of the component. Displayed on the front end.
+#     enabled: true/false # sets whether the component is enabled
+#     klass: 'string' # class name of the component
+#     path: 'string' # sets the routes path
 
 components:
   blog:
-    enabled: true
-    path: 'blog'
-    klass: 'Blog'
     name: 'Blog'
-  links:
     enabled: true
-    path: 'links'
-    klass: 'Link'
+    klass: 'Blog'
+    path: 'blog'
+  links:
     name: 'Links'
+    enabled: true
+    klass: 'Link'
+    path: 'links'
 
 # view struture
 # component:
@@ -38,3 +53,69 @@ views:
       url:
         type: 'string'
 
+# authentication structure
+auth:
+
+  # roles available within the application
+  roles:
+    - guest
+    - member
+    - editor
+    - admin
+
+
+  # all available permissions
+  # 'all' is the admin ability which bypasses all further validations
+
+  abilities:
+    - 'all'
+    - 'create'
+    - 'read'
+    - 'update'
+    - 'delete'
+
+  # Mapping actions to abilities
+
+  actions:
+    index:
+      'read'
+    show:
+      'read'
+    edit:
+      'update'
+    destroy:
+      'delete'
+    new:
+      'create'
+    create:
+      'create'
+
+  # Permissions Map
+  # user:           # role
+  #   component:    # name of the component
+  #     ability:    # name of the ability
+  #       options:  # ability options
+
+  permissions:
+    guest:
+      blog:
+        read:
+
+    member:
+      blog:
+        read:
+      links:
+        read:
+
+    editor:
+      blog:
+        create:
+        read:
+        update:
+        delete:
+
+    admin:
+      blog:
+        all:
+      links:
+        all:
