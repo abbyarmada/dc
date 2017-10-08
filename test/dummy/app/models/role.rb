@@ -1,5 +1,4 @@
 class Role < ApplicationRecord
-
   has_and_belongs_to_many :users, :join_table => :users_roles
 
   belongs_to :resource,
@@ -19,7 +18,7 @@ class Role < ApplicationRecord
   before_update :verify_role_exists
 
   def verify_role_exists
-    roles = settings "auth.roles", fatal_exception: true
-    raise "Role: `#{self.name}` is not defined under auth.roles" unless roles.include?(self.name)
+    roles = settings 'auth.roles', fatal_exception: true
+    raise "Role: `#{name}` is not defined under auth.roles" unless roles.include?(name)
   end
 end

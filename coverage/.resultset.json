@@ -737,12 +737,10 @@
         1,
         2,
         null,
-        null,
         null
       ],
       "/Users/lmedovyy/src/dc/test/dummy/app/models/role.rb": [
         1,
-        null,
         1,
         null,
         1,
@@ -768,6 +766,6 @@
         null
       ]
     },
-    "timestamp": 1507485527
+    "timestamp": 1507486685
   }
 }
