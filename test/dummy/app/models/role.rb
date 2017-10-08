@@ -10,4 +10,15 @@ class Role < ApplicationRecord
             :allow_nil => true
 
   scopify
+
+  # TODO: Move into its own concern
+  include DC::SettingsHelper
+
+  before_create :verify_role_exists
+  before_update :verify_role_exists
+
+  def verify_role_exists
+    roles = settings 'auth.roles', fatal_exception: true
+    raise "Role: `#{name}` is not defined under auth.roles" unless roles.include?(name)
+  end
 end
